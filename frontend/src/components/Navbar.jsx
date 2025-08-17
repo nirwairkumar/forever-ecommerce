@@ -51,8 +51,18 @@ const Navbar = () => {
             </div>
 
             {/* sidebar menue for small screens */}
-            <div className={`absolute top-0 right-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0' }`}>
+            <div className={`absolute inset-0 top-0 right-0 bottot-0 left-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0' }`}>
+                <div className='flex flex-col text-gray-600'>
+                    <div onClick={()=>setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
+                        <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />
+                        <p>Back</p>
+                    </div>
 
+                    <NavLink onClick={()=>setVisible(false)} to='/' className='py-2 pl-6 border'>HOME</NavLink>
+                    <NavLink onClick={()=>setVisible(false)} to='/collection' className='py-2 pl-6 border'>COLLECTION</NavLink>
+                    <NavLink onClick={()=>setVisible(false)} to='/about' className='py-2 pl-6 border'>ABOUT</NavLink>
+                    <NavLink onClick={()=>setVisible(false)} to='/contact' className='py-2 pl-6 border'>CONTACT</NavLink>
+                </div>
             </div>
         </div>
     )
